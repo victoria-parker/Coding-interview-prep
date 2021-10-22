@@ -7,11 +7,9 @@ function sym(...args) {
     })
   }
 
-//busco la diferencia
-    let acc =arr[0].concat(arr[1]).filter(value=>!arr[0].includes(value) || !arr[1].includes(value))
-  
+ //busco la diferencia
+  return arr.reduce((acc,item)=> acc.concat(item).filter(value=> !acc.includes(value) || !item.includes(value)),[])
 
-  return acc
   }
   
   console.log(sym([3, 3, 3, 2, 5], [2, 1, 5, 7]));
